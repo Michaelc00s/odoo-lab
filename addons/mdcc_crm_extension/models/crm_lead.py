@@ -26,6 +26,9 @@ class CrmLead(models.Model):
         string="AI Processed",
         default=False,
     )
+    ai_last_processed = fields.Datetime(
+	    string="AI Last Processed",
+    )
 
     def action_process_with_ai(self):
         for lead in self:
@@ -34,6 +37,7 @@ class CrmLead(models.Model):
                 "ai_confidence": 0.95,
                 "ai_summary": f"AI processed opportunity: {lead.name}",
                 "ai_processed": True,
+		"ai_last_processed": fields.Datetime.now(),
             })
 
         return True
