@@ -1,0 +1,42 @@
+<odoo>
+    <record id="crm_lead_view_form_mdcc_ai" model="ir.ui.view">
+
+        <field name="name">crm.lead.form.mdcc.ai</field>
+
+        <field name="model">crm.lead</field>
+
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+
+        <field name="arch" type="xml">
+
+            <xpath expr="//header" position="inside">
+
+                <button
+                    name="action_process_with_ai"
+                    string="Process with AI"
+                    type="object"
+                    class="btn-primary"
+                />
+
+            </xpath>
+
+            <xpath expr="//sheet//group" position="inside">
+
+                <group string="AI Information">
+
+                    <field name="ai_category"/>
+
+                    <field name="ai_confidence"/>
+
+                    <field name="ai_processed"/>
+
+                    <field name="ai_summary"/>
+
+                </group>
+
+            </xpath>
+
+        </field>
+
+    </record>
+</odoo>
