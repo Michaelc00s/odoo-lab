@@ -29,6 +29,9 @@ class CrmLead(models.Model):
     ai_last_processed = fields.Datetime(
 	    string="AI Last Processed",
     )
+    ai_status_note = fields.Char(
+    string="AI Status Note",
+    )	
 
     def action_process_with_ai(self):
         for lead in self:
